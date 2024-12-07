@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+    <link rel="stylesheet" href="buy-service.css">
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script> <!-- Replace with your PayPal Client ID -->
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Choose Your Payment Method</h1>
+        <p>Select a payment method to proceed with your purchase:</p>
+
+        <!-- Payment Options -->
+        <div class="payment-options">
+            <!-- Visa -->
+            <div class="payment-icon" id="visa">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.zqyRoAtlIB74QPYuiZe-EQAAAA&pid=Api&P=0&h=220" alt="Visa" class="payment-img">
+                <p>Visa</p>
+            </div>
+
+            <!-- Mastercard -->
+            <div class="payment-icon" id="mastercard">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.zypeFaQrVIN3Azn-TCvUqAHaEp&pid=Api&P=0&h=220" alt="Mastercard" class="payment-img">
+                <p>Mastercard</p>
+            </div>
+
+            <!-- PayPal -->
+            <div class="payment-icon" id="paypal">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.Fv-lDH2_wnf68DCQCnCdrwHaHa&pid=Api&P=0&h=220" alt="PayPal" class="payment-img">
+                <p>PayPal</p>
+            </div>
+
+            <!-- KakaoPay -->
+            <div class="payment-icon" id="kakaopay">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.VvqGP5fLMy3SHPvRxA9eXwHaDL&pid=Api&P=0&h=220" alt="KakaoPay" class="payment-img">
+                <p>KakaoPay</p>
+            </div>
+
+            <!-- SticPay -->
+            <div class="payment-icon" id="sticpay">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.kqEgowWAFfTBGl41V_6b_QAAAA&pid=Api&P=0&h=220" alt="SticPay" class="payment-img">
+                <p>SticPay</p>
+            </div>
+        </div>
+
+        <!-- Card Payment Form -->
+        <div class="payment-details hidden" id="card-payment-form">
+            <h2>Enter Card Details</h2>
+            <form id="card-form">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiration Date</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" placeholder="123" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cardholder-name" placeholder="Full Name" required>
+                </div>
+                <button type="submit" class="pay-button">Pay Now</button>
+                <button type="button" class="cancel-button">Cancel</button>
+            </form>
+        </div>
+
+        <!-- PayPal Login Form -->
+        <div class="payment-details hidden" id="paypal-form">
+            <h2>Login with Your PayPal Account</h2>
+            <p>Click below to log in to PayPal and complete your payment.</p>
+            <div id="paypal-button-container"></div>
+            <button type="button" class="cancel-button">Cancel</button>
+        </div>
+
+        <!-- KakaoPay Payment Form -->
+        <div class="payment-details hidden" id="kakaopay-form">
+            <h2>Enter Your KakaoPay Details</h2>
+            <form id="kakaopay-form-details">
+                <div class="form-group">
+                    <label for="kakaopay-id">KakaoPay ID</label>
+                    <input type="text" id="kakaopay-id" placeholder="Your KakaoPay ID" required>
+                </div>
+                <button type="submit" class="pay-button">Pay Now</button>
+                <button type="button" class="cancel-button">Cancel</button>
+            </form>
+        </div>
+
+        <!-- SticPay Payment Form -->
+        <div class="payment-details hidden" id="sticpay-form">
+            <h2>Enter SticPay Details</h2>
+            <form id="sticpay-form-details">
+                <div class="form-group">
+                    <label for="sticpay-email">SticPay Email</label>
+                    <input type="email" id="sticpay-email" placeholder="Email associated with SticPay" required>
+                </div>
+                <button type="submit" class="pay-button">Pay Now</button>
+                <button type="button" class="cancel-button">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="buy-service.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the Payment Section */
+.payment-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Title and Description */
+.payment-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.payment-container p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Payment Option Icons */
+.payment-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.payment-icon {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.payment-icon:hover {
+    transform: scale(1.1);
+}
+
+.payment-img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Payment Forms (Hidden by default) */
+.payment-details {
+    display: none;
+    text-align: center;
+}
+
+.payment-details.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button.pay-button {
+    background-color: #0070ba;
+    color: white;
+}
+
+button.pay-button:hover {
+    background-color: #005fa3;
+}
+
+button.cancel-button {
+    background-color: #e2e2e2;
+    color: #333;
+}
+
+button.cancel-button:hover {
+    background-color: #ccc;
+}
+
+/* PayPal Button Section */
+#paypal-login-button {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 20px;
+    }
+
+    .payment-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-icon {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-container h1 {
+        font-size: 24px;
+    }
+
+    .payment-container p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

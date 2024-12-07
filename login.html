@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Moontoon</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function toggleForm(formType) {
+            if (formType === 'signIn') {
+                document.getElementById('signInForm').style.display = 'block';
+                document.getElementById('signUpForm').style.display = 'none';
+                document.getElementById('signInBtn').classList.add('active');
+                document.getElementById('signUpBtn').classList.remove('active');
+            } else if (formType === 'signUp') {
+                document.getElementById('signInForm').style.display = 'none';
+                document.getElementById('signUpForm').style.display = 'block';
+                document.getElementById('signUpBtn').classList.add('active');
+                document.getElementById('signInBtn').classList.remove('active');
+            }
+        }
+
+        window.onload = function() {
+            toggleForm('signIn');  // Default to show the login form when the page loads
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="welcome-text">
+                <h1>Welcome Back</h1>
+                <p>"Unlock the power of your digital future with Moontoon."</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://whatsapp.com" target="_blank" class="icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="login-box">
+                <div class="toggle-buttons">
+                    <button id="signInBtn" class="active" onclick="toggleForm('signIn')">Sign In</button>
+                    <button id="signUpBtn" onclick="toggleForm('signUp')">Sign Up</button>
+                </div>
+                
+                <!-- Sign In Form -->
+                <form id="signInForm" action="login.php" method="POST">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="signInEmail" placeholder="Enter your email" required name="email"> 
+                
+                    <label for="password">Password</label>
+                    <input type="password" id="signInPassword" placeholder="Enter your password" required name="password">
+                
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember Me</label>
+                    </div>
+                
+                    <button type="submit" class="btn">Sign In Now</button>
+                    <a href="#" class="forgot-password">Lost your password?</a>
+                </form>
+                 <!-- Sign Up Form -->
+                <form id="signUpForm" action="signup.php" method="POST" style="display: none;">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signUpEmail" placeholder="Enter your email" required name="email">
+                    
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signUpPassword" placeholder="Create a password" required name="password">
+                    
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required name="confirm_password">
+                
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+
+                <p class="terms">By signing up or signing in, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

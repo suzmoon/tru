@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://wallpapercave.com/wp/wp3950066.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1100px; /* Adjusted to match the compact size */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Left Content - Welcome Message */
+.left-content {
+    flex: 1;
+    margin-right: 30px;
+    text-align: left;
+}
+
+.left-content h1 {
+    font-size: 3rem;
+    color: #ff6600;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.left-content span {
+    color: #fff;
+}
+
+.left-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.icon:hover {
+    color: #ff6600;
+    transform: scale(1.1);
+}
+
+/* Right Content - Login Box */
+.right-content {
+    flex: 1;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.toggle-buttons button.active {
+    background: #e65c00;
+}
+
+.toggle-buttons button:hover {
+    background: #e65c00;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+form input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.btn {
+    background: #ff6600;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e65c00;
+}
+
+.forgot-password {
+    text-align: center;
+    color: #ff6600;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.terms {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.terms a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}

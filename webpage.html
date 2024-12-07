@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moontoon - Digital Marketing Services</title>
+    <style>
+
+        /* General Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: rgba(51, 51, 51, 0.9);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #f4a261;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            filter: brightness(1.2) saturate(1.3);
+            animation: fade 8s infinite;
+        }
+        .slideshow img:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .slideshow img:nth-child(2) {
+            animation-delay: 4s;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 2;
+        }
+        .hero-content {
+            position: absolute;
+            top: 15%;
+            right: 5%;
+            z-index: 3;
+            color: #000;
+            text-align: right;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            font-family: 'Great Vibes', cursive;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.4em;
+            line-height: 1.6;
+        }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            50% { opacity: 1; }
+            75% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Services Section */
+        #services {
+            padding: 50px 10%;
+            background: linear-gradient(to bottom right, #f4f4f4, #e2e2e2);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .services-header h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .service-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-text {
+            width: 45%;
+        }
+
+        .service-text h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .service-text p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .view-more {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .view-more:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .service-image {
+            width: 45%;
+        }
+
+        .service-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Us Section */
+        #contact {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #333;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-box {
+            width: 250px;
+            height: 350px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .contact-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #f4a261;
+        }
+
+        .contact-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-box h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Hover effect for name */
+        .contact-box h3:hover {
+            color: #f4a261;
+        }
+
+        .contact-box .contact-button {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f4a261;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box .contact-button:hover {
+            background-color: #e76f51;
+        }
+
+        .contact-description {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 10px;
+            padding: 0 20px;
+            text-align: center;
+        }
+/* Style for Leave a Review button */
+.review-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background-color: #f4a261; /* Button color */
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px; /* Space above the button */
+}
+
+.review-button:hover {
+    background-color: #e76f51; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarges when hovered */
+}
+
+.review-button:active {
+    background-color: #e76f51; /* Active state color */
+    transform: scale(1); /* Returns to normal size when clicked */
+}
+
+/* General Styles for the Contact Form */
+#contact {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+#contact h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contact .row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="url"] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    background-color: #ffffff;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Lift effect */
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px); /* Click effect */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 767px) {
+    #contact {
+        padding: 20px;
+        width: 90%;
+    }
+
+    #contact h2 {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"] {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.chat-box .btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.chat-box .btn-primary:hover {
+    background-color: #0056b3;
+}
+/* General Section Styling */
+.section-review {
+  padding: 50px 0;
+  background-color: #f7f7f7;
+  font-family: 'Arial', sans-serif;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+}
+
+.underline:after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background-color: #ff6f61;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.review-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+}
+
+.review-card__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.review-card__content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.review-card__text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.review-card__name {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.9);
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Moontoon</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slideshow">
+            <img src="9dT3vYm.jpg" alt="Background 1">
+            <img src="iTgGpB.jpg" alt="Background 2">
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Moontoon</h1>
+            <p>We help your business grow<br>with the power of digital marketing.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>We offer a variety of digital marketing services to help you grow your business.</p>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Email Marketing</h3>
+                <p>Reach your audience directly and personally with email campaigns that convert.</p>
+                <a href="email-marketing.html" class="view-more">View More</a>
+            </div>
+            <div class="service-image">
+                <img src="email-marketing-5937010_1920.jpg" alt="Email Marketing">
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Social Media Marketing</h3>
+                <p>Build your brand on social platforms like Facebook, Instagram, and Twitter with targeted campaigns.</p>
+                <a href="social-media-marketing.html" class="view-more">View More</a>
+            </div>
+            <div class="service-image">
+                <img src="fi_socialmedia-001.jpg" alt="Social Media Marketing">
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-text">
+                <h3>Search Engine Optimization</h3>
+                <p>Improve your website's visibility and attract more organic traffic with our expert SEO services.</p>
+                <a href="seo.html" class="view-more">View More</a>
+            </div>
+            <div class="service-image">
+                <img src="iStock-1202205522-e1600464883461-1536x862.jpg" alt="SEO">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+
+
+              <section id="professionals" class="section">
+                <div class="container">
+                    <h2 class="section-title">Chat with Our Experts</h2>
+                    <p class="section-description">
+                        Connect instantly with professionals ready to guide your business transformation.
+                    </p>
+                    <div class="chat-box">
+                        <a href="Chat with Experts.html" class="btn btn-primary" aria-label="Start Chat with Experts">Start Chat</a>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="col-lg-5 align-self-center">
+                <form id="contact" action="page.php" method="post">
+                  <h2>Contact Us</h2>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <fieldset>
+                              <input type="text" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                          </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                          <fieldset>
+                              <input type="text" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
+                          </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                          <fieldset>
+                              <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Your Email" required>
+                          </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                          <fieldset>
+                              <input type="url" name="website" id="website" placeholder="Your Website URL" required>
+                          </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                          <fieldset>
+                              <button type="submit" id="form-submit" class="main-button">Submit Request</button>
+                          </fieldset>
+                      </div>
+                  </div>
+                </form>
+              </div>
+
+
+              <section class="review-section">
+                <div class="container">
+                    <h2 class="section-heading">What Our Clients Say</h2>
+                    <div class="review-grid">
+                        <div class="review-card">
+                            <img 
+                                src="https://cdn.lifehack.org/wp-content/uploads/2015/02/what-makes-people-happy.jpeg"
+                                alt="Client Cesar Rincon"
+                                class="review-card__image"
+                            />
+                            <div class="review-card__content">
+                                <blockquote class="review-card__text">
+                                    "The event was an incredible learning experience. It challenged me to step out of my comfort zone and gain valuable insights. I believe everyone should embrace such opportunities at least once in their lifetime."
+                                </blockquote>
+                                <div class="review-card__name">Cesar Rincon</div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <img 
+                                src="http://anhede.se/wp-content/uploads/2014/01/130221-2528.jpg"
+                                alt="Client Mathilde Langevin"
+                                class="review-card__image"
+                            />
+                            <div class="review-card__content">
+                                <blockquote class="review-card__text">
+                                    "What started as a fun experience quickly transformed into something extraordinary. The depth and quality of the event far exceeded my expectations. It was not just fun—it was truly fantastic!"
+                                </blockquote>
+                                <div class="review-card__name">Mathilde Langevin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+              
+   
+
+  <!-- In index.html -->
+
+<a href="review.html" class="review-button">Leave a Review</a>
+
+
+
+</body>
+</html>
